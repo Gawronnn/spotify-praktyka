@@ -38,7 +38,7 @@ export class LoginService {
     body.append('grant_type', 'authorization_code');
     body.append('client_id', this.clientId);
     body.append('code', this.code!);
-    body.append('redirect_uri', 'http://localhost:4200/callback');
+    body.append('redirect_uri', 'https://gawronnn.github.io/spotify-praktyka/callback');
     body.append('code_verifier', verifier!);
     const headers: HttpHeaders = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',

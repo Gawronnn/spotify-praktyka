@@ -30,7 +30,7 @@ export class LoginPageComponent {
     const params = new URLSearchParams();
     params.append('client_id', clientId);
     params.append('response_type', 'code');
-    params.append('redirect_uri', 'http://localhost:4200/callback');
+    params.append('redirect_uri', 'https://gawronnn.github.io/spotify-praktyka/callback');
     params.append(
       'scope',
       'user-read-private user-read-email playlist-read-private user-top-read playlist-modify-public playlist-modify-private'
