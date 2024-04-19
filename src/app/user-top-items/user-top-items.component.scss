@@ -1,0 +1,30 @@
+#artist_picture {
+  height: 60px;
+  width: 60px;
+  margin-top: 5px;
+}
+
+#top-artist {
+  height: 70px;
+  width: 20%;
+}
+
+#artist {
+  background-color: rgb(20, 20, 20);
+  margin: 10px 0px 10px 0px;
+  box-shadow: 0px 5px 0px 0px rgba(20, 20, 20, 1);
+}
+
+#artist_name {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  position: relative;
+  bottom: 18px;
+  left: 10px;
+}
+
+#artist_name:hover {
+  color: #69f0ae;
+  text-decoration: underline;
+}

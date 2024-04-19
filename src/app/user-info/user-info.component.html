@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Logged in as <span id="displayName"></span></h2>
+<mat-dialog-content>
+  <ul>
+    <li>User ID: <span id="id"></span></li>
+    <li>Email: <span id="email"></span></li>
+    <li>Spotify URI: <a id="uri" href="#" target="_blank"></a></li>
+    <li>Link: <a id="url" href="#"></a></li>
+    <li>Profile Image: <a id="imgUrl" href="#"></a></li>
+  </ul>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button
+    mat-flat-button mat-dialog-close
+    color="accent"
+    (click)="onLogout()"
+    routerLink="login"
+  >
+    Logout
+  </button>
+</mat-dialog-actions>

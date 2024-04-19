@@ -1,0 +1,61 @@
+<body class="mat-app-background">
+  <header>
+    <button mat-flat-button color="accent" id="go_back" routerLink="">
+      Go back
+    </button>
+    <h1>Tracks</h1>
+    <span id="avatar"
+      ><img
+        src="../../assets/deafult-profile-picture.png"
+        alt="profile_picture"
+        id="profile_picture"
+        (click)="openDialog()"
+    /></span>
+  </header>
+  <div id="tracks_section" *ngIf="tracks">
+    <div *ngFor="let item of tracks.items">
+      <div>
+        <span id="image">
+          <a [href]="item.track.external_urls.spotify" id="link" target="_blank"
+            ><img
+              [src]="item.track.album.images[0].url"
+              alt="track_picture"
+              id="track_picture" /></a
+        ></span>
+        <div id="items">
+          <h2 id="track_name">{{ item.track.name }}</h2>
+          <span
+            >Duration:
+            <span id="duration">
+              {{ item.track.duration_ms | date : "m:ss" }}</span
+            >
+          </span>
+          <br />
+          <span
+            >Published:
+            <span id="published">{{
+              item.added_at | date : "yyyy-MM-dd"
+            }}</span></span
+          ><br />
+          <div>
+            Artists:
+            <span *ngFor="let artist of item.track.artists">
+              <a
+                [href]="artist.external_urls.spotify"
+                id="owner"
+                target="_blank"
+                >{{ artist.name }},
+              </a></span
+            >
+          </div>
+          <mat-icon
+            aria-hidden="false"
+            aria-label="example delete"
+            fontIcon="delete"
+            color="warn" (click)="deletePlaylistItems(item.track.uri)"
+          ></mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

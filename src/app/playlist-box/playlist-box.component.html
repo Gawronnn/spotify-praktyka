@@ -1,0 +1,33 @@
+<div id="playlist_section" *ngIf="playlists">
+  <div *ngFor="let item of playlists.items">
+    <div>
+      <span id="image"
+        ><img
+          [src]="item.images[0].url"
+          alt="playlist_picture"
+          id="playlist_picture" routerLink="playlist/{{item.id}}"
+      /></span>
+      <h2 id="playlist_name">{{ item.name }}</h2>
+      <span>Open in </span>
+      <a [href]="item.external_urls.spotify" id="link" target="_blank"
+        >Spotify</a
+      ><br />
+      <span
+        >Total tracks: <span id="total">{{ item.tracks.total }}</span></span
+      ><br />
+      <span
+        >Public:
+        <span id="public">{{ item.public ? "Yes" : "No " }}</span></span
+      ><br />
+      <span
+        >Owner:
+        <a
+          [href]="item.owner.external_urls.spotify"
+          id="owner"
+          target="_blank"
+          >{{ item.owner.display_name }}</a
+        ></span
+      >
+    </div>
+  </div>
+</div>
